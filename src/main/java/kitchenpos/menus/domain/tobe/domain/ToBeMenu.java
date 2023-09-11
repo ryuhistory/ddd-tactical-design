@@ -93,6 +93,13 @@ public class ToBeMenu {
         validationOfPrice(price, menuProducts.getSumOfProducts());
     }
 
+    public boolean isSameMenuAndPrice(UUID id, BigDecimal price) {
+        if (this.id != id) {
+            return false;
+        }
+        return this.price.equals(Price.of(price));
+    }
+
     private void validationOfPrice(Price price, Price sumOfProducts) {
         if (price.isGreaterThan(sumOfProducts)) {
             throw new IllegalArgumentException("메뉴에 속한 상품 금액의 합은 메뉴의 가격보다 크거나 같아야 한다.");
@@ -104,5 +111,4 @@ public class ToBeMenu {
             throw new IllegalArgumentException("메뉴는 특정 메뉴 그룹에 속해야 한다.");
         }
     }
-
 }

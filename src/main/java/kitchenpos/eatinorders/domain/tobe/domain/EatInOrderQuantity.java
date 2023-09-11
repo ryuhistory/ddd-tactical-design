@@ -1,4 +1,4 @@
-package kitchenpos.menus.domain.tobe.domain;
+package kitchenpos.eatinorders.domain.tobe.domain;
 
 import java.util.Objects;
 
@@ -6,17 +6,14 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Quantity {
+public class EatInOrderQuantity {
     @Column(name = "quantity", nullable = false)
     private long quantity;
 
-    public Quantity() {
+    protected EatInOrderQuantity() {
     }
 
-    private Quantity(long quantity) {
-        if (quantity < 0) {
-            throw new IllegalArgumentException("수량은 0보다 작을 수 없습니다.");
-        }
+    private EatInOrderQuantity(long quantity) {
         this.quantity = quantity;
     }
 
@@ -26,7 +23,7 @@ public class Quantity {
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        Quantity quantity1 = (Quantity)o;
+        EatInOrderQuantity quantity1 = (EatInOrderQuantity)o;
         return quantity == quantity1.quantity;
     }
 
@@ -35,12 +32,8 @@ public class Quantity {
         return Objects.hash(quantity);
     }
 
-    public static Quantity of(long quantity) {
-        return new Quantity(quantity);
-    }
-
-    public Quantity changeQuantity(long quantity) {
-        return new Quantity(quantity);
+    public static EatInOrderQuantity of(long quantity) {
+        return new EatInOrderQuantity(quantity);
     }
 
     public long value() {

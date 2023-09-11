@@ -12,6 +12,7 @@ import javax.persistence.Enumerated;
 
 @Embeddable
 public class Price {
+    public static Price ZERO = Price.of(0L);
     @Column(name = "price", nullable = false)
     private BigDecimal price;
     @Column(name = "currency", nullable = false)

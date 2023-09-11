@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import kitchenpos.eatinorders.domain.tobe.domain.NumberOfGuest;
 import kitchenpos.eatinorders.domain.tobe.domain.ToBeOrderTable;
 
-class ToBeOrderTableTest {
+class EatInOrderTableTest {
 
     private ToBeOrderTable orderTable;
 

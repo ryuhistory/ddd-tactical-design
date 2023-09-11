@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 import kitchenpos.menus.domain.tobe.domain.Name;
 
-@Table(name = "order_table")
+@Table(name = "tobe_order_table")
 @Entity
 public class ToBeOrderTable {
     @Column(name = "id", columnDefinition = "binary(16)")
@@ -50,7 +50,6 @@ public class ToBeOrderTable {
         if (!occupied) {
             throw new IllegalStateException("빈 테이블이면 손님 수를 변경 할 수 없다.");
         }
-
         numberOfGuest = numberOfGuest.changeNumberOfGuest(number);
     }
 
