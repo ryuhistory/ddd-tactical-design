@@ -30,7 +30,7 @@ public class Name {
     }
 
     private void nullValidation(String name) {
-        if (name == "" || Objects.isNull(name)) {
+        if (Objects.isNull(name) || name.isEmpty()) {
             throw new IllegalArgumentException("이름은 필수로 입력되야 합니다.");
         }
     }
